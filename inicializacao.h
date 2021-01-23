@@ -13,7 +13,17 @@ bool inicializarPrograma() {
 	}
 
 	//Executar programa...
-
-
+			
+	int numero= 0;
+	if(validarNumeroNatural(numero)){
+		printf("verdadeiro");
+	} else {
+		printf("falso");
+	}
+	
+	
+	
+	
+	
 	return true;
 }
