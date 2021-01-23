@@ -50,5 +50,6 @@ Crie um atalho deste arquivo na pasta do repositório com o nome "executavel.lnk
 execute o arquivo "compilar.bat". este arquivo vai compilar o código, copiar e abrir o executavel
 
 para executar o arquivo compilar.bat escreva na linha de comando .\compilar.bat
-
+pode acontecer de algum antivirus barrar o programar por suspeita de virus.
+caso isso aconteça, desative o antivirus enquanto estiver trabalhando no projeto
 agora sempre que quiser compilar o código basta executar este arquivo .bat
