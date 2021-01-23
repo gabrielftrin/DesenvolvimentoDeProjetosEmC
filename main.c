@@ -1,13 +1,14 @@
-#include <stdio.h>
+#include "inicializacao.h"
 
-//Exibe uma pausa na tela para que o usuario possa ler e tomar decisoes
-void pausa()
+//Funcao principal
+void main()
 {
-	printf("\nPressione [ENTER] para continuar... ");
-	scanf("[^\n]");
-}
-
-void main (){
-	printf("batatappppppppppppppppppppppppppppppppppppppppppppppppppppp");
-	pausa();
+	//Iniciar a execucao do programa
+	if (!inicializarPrograma())
+	{
+		imprimirListaDeErros();
+		limparErros();
+		pausa();
+		main();
+	}
 }

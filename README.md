@@ -53,3 +53,50 @@ para executar o arquivo compilar.bat escreva na linha de comando .\compilar.bat
 pode acontecer de algum antivirus barrar o programar por suspeita de virus.
 caso isso aconteça, desative o antivirus enquanto estiver trabalhando no projeto
 agora sempre que quiser compilar o código basta executar este arquivo .bat
+
+montagem do ambiente concluída
+
+#Arquivos
+
+primeiro arquivo: funcoesdosistema.h
+
+Esta biblioteca possui 3 funcoes que usam apenas metodos/funcoes reservadas do C e que não depende de nenhum outro arquivo para funcionar.
+pausa: Exibe uma pausa na tela para que o usuario possa ler e tomar decisoes
+limparTela: Limpa tudo que estiver na tela
+sairDoPrograma: Fecha o programa
+
+segundo arquivo: estruturas.h
+
+Esta biblioteca é responsavel por incluir as bibliotecas padrão do C que serão utilizadas. Além de definir contantes, variáveis globais e tipos abstratos de dados.
+Nenhuma função deve ser implementada nestabiblioteca. Apenas includes e declarações de variáveis. este arquivo possui um include da biblioteca funcoesdosistema.h
+
+terceiro arquivo: excecao.h
+
+essa biblioteca possui um controle de tratamento de erros (exceções). esse arquivo possui um include da biblioteca estruturas.h
+ela possui 4 funções
+
+lançarErro: Armazenar codigo de erro num vetor de erros
+mostrarErrosNaTela: Imprimir lista de mensagens de erro lancadas
+imprimirListaDeErros: Preencher vetor de mensagens de erro de acordo com o codigo e mostrar erros na tela
+limparErros: Limpar a lista de mensagens de erro e a lista de codigos de erro
+
+próximo arquivo: validacoes.h
+esta biblioteca possui valições mais genéricas de situações comuns no uso da linguagem. São diversar funções úteis. esse arquivo possui um include do biblioteca excecao.h
+
+configurarLocal: Alterar localizacao do programa para a localizacao do sistema para permitir uso de caracteres especiais
+limparBufferDoTeclado: Limpa o buffer do teclado (entrada padrao)
+validarAlocacaoDeMemoria: Validar alocacao de memoria, retorna falso se o ponteiro for nulo
+validarNumeroNatural: Retorna verdadeiro se for um número natural
+validarNumeroNaturalPositivo: Retorna verdadeiro se for um número natural maior que zero
+lerNumeroInteiroDoTeclado: Retorna o ponteiro do número lido ou NULL em caso de erro (caso leia um número maior que int o ponteiro retornara o VALOR -1)
+lerNumeroNaturalDoTeclado: Retorna o número NATURAL lido ou EOF (-1) em caso de erro
+lerTextoDoTeclado: Recebe a quantidade de caracteres que devem ser lidos. Retorna nulo se der erro ou o ponteiro da string lida.
+
+proximo arquivo: inicialização.h
+
+esta biblioteca contem as funcoes iniciais do programa. nele escrevemos o que o programa deve fazer inicialmente.
+este arquivo tem um include pra biblioteca validacoes.h. Porém, caso seja necessário, podem ser criados novos arquivos para modularizar o código.
+se for este o caso, o arquivo inicialização deve ter um include deste novo arquivo (apenas 1 include) e o novo arquivo deve ter o include de validações.h
+
+por fim, o arquivo main.c 
+este arquivo apenas roda o programa e xibe erros na tela caso existam
