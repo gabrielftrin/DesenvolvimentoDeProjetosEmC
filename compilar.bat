@@ -1,0 +1,1 @@
+gcc.lnk -o executavel.exe %CD%\main.c && copy C:\MinGW\bin\executavel.exe %CD% && executavel.exe
